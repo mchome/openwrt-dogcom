@@ -18,9 +18,13 @@
   make package/openwrt-dogcom/compile
 ```
 
-### Notice:
+### To start:
 
-init config will be added later.
+put this under `/etc/rc.local`
+
+```bash
+dogcom -m dhcp -c /etc/drcom.conf -d
+```
 
 ### License:
 
