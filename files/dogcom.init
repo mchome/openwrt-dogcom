@@ -1,0 +1,17 @@
+#!/bin/sh /etc/rc.common
+
+START=50
+
+USE_PROCD=1
+
+start_service() {
+    procd_open_instance
+    procd_set_param command /usr/bin/dogcom
+    procd_append_param command -m dhcp -c /etc/dogcom.conf
+
+reload_service()
+{
+    echo "Explicitly restarting service, are you sure you need this?"
+    stop
+    start
+}

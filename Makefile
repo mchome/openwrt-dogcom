@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dogcom
-PKG_VERSION=v1.6.2
+PKG_VERSION=v1.6.3
 PKG_RELEASE:=1
 
 PKG_MAINTAINER:=fuyumi <280604399@qq.com>
@@ -38,6 +38,7 @@ define Package/dogcom/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dogcom $(1)/usr/bin/dogcom
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_BIN) ./files/dogcom.conf $(1)/etc/dogcom.conf
+	$(INSTALL_BIN) ./files/dogcom.init $(1)/etc/init.d/dogcom
 endef
 
 $(eval $(call BuildPackage,dogcom))
