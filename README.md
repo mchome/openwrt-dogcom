@@ -20,10 +20,9 @@
 
 ### To start:
 
-put this under `/etc/rc.local`
-
 ```bash
-dogcom -m dhcp -c /etc/drcom.conf -d
+/etc/init.d/dogcom enable
+/etc/init.d/dogcom start
 ```
 
 ### License:
